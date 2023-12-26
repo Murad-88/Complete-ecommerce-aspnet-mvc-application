@@ -4,14 +4,15 @@
     ViewData["Title"] = "Delete Actor";
 }
 
-<div class="row text">
-    <div class="col-md-8 offset-2">
-        <p>
-            <h1>Delete confirmation for @Model.FullName</h1>
-        </p>
-        <div class="row">
-            <div class="col-md-8 offset-2">
-                <div class="form-group">
+<div class="bg-light">
+    <h1 class="text-center">Delete Confirmation for @Model.FullName</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="row w-100">
+            <div class="w-75 mx-auto bg-light rounded p-3">
+                <div class="form-group text-center">
                     <img class="border-info rounded-circle" style="max-width: 150px" id="ProfilePicturePreview" />
                 </div>
                 <div class="form-group">
@@ -30,12 +31,12 @@
                     <span asp-validation-for="Bio" class="text-danger"></span>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group d-flex justify-content-between mt-2">
+                    <a class="btn btn-outline-secondary" asp-action="Index">Back to List</a>
                     <form asp-action="Delete">
                         <input type="hidden" asp-for="Id" />
                         <input type="submit" value="Confirm" class="btn btn-danger float-end" />
                     </form>
-                    <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
                 </div>
             </div>
         </div>

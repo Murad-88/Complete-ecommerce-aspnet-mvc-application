@@ -1,16 +1,17 @@
 ﻿@model Cinema
 
 @{
-    ViewData["Title"] = "Details Of the Cinema";
+    ViewData["Title"] = "Details Of the Mahallah";
 }
 
-<div class="row text">
-    <div class="col-md-8 offset-2">
-        <p>
-            <h1>Details for @Model.Name</h1>
-        </p>
-        <div class="row">
-            <div class="col-md-8 offset-2">
+<div class="bg-light">
+    <h1 class="text-center">Details for @Model.Name</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="row w-100">
+            <div class="w-75 mx-auto bg-light rounded p-3">
                 <div class="form-group">
                     <img class="border-info rounded-circle" style="max-width: 150px" id="CinemaLogoPreview" />
                 </div>
@@ -30,12 +31,12 @@
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group d-flex justify-content-between mt-2">
+                    <a class="btn btn-outline-secondary" asp-action="Index">Back to List</a>
                     @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                     {
-                        <a class="btn btn-outline-success float-end" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                        <a class="btn btn-outline-success" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
                     }
-                    <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
                 </div>
             </div>
         </div>
