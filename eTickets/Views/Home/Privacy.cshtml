@@ -1,6 +1,88 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "About IRent";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div class="text-center bg-light mb-5 py-4">
+    <div class="container">
+        <h1 class="text-center">@ViewData["Title"]</h1>
+        <p class="text-center mx-auto w-50 pt-3">
+            Welcome to IRent, your Student-To-Student Renting platform revolutionizing the student experience at <strong>IIUM!</strong> At IRent, we understand the financial challenges
+            students face and the environmental impact of traditional consumption.
+        </p>
+    </div>
+</div>
+
+<div class="my-5">
+    <div class="border-start border-5 border-info rounded-start ps-2 my-2 bg-light w-75 mx-auto">
+        IRent is more than just a website; it's a community. We empower students to connect
+        with one another and share resources, making items more affordable and accessible while
+        promoting a sustainable lifestyle. At IRent, we understand the challenges students face
+        with limited budgets and space constraints.
+    </div>
+    <br />
+    <div class="border-start border-5 border-warning rounded-start ps-2 my-2 bg-light w-75 mx-auto">
+        Our platform is designed to foster a sense of community by connecting undergraduate
+        and postgraduate students from diverse backgrounds, providing a solution to the
+        <strong>financial</strong> strain of acquiring short-term items.
+    </div>
+    <br />
+    <div class="border-start border-5 border-danger rounded-start ps-2 my-2 bg-light w-75 mx-auto">
+        Our user verification process adds an extra layer of security, while secure payment
+        methods minimize the risk of disputes. IRent isn't just about saving money – it's a
+        commitment to sustainability. By sharing resources, we contribute to a circular economy,
+        reducing waste and conserving valuable resources.
+    </div>
+    <br />
+    <div class="border-start border-5 border-success rounded-start ps-2 my-2 bg-light w-75 mx-auto">
+        With a user-friendly interface, immediate access to a wide range of items, and
+        improved communication channels, IRent is not just a platform; it's a community-driven
+        initiative shaping the future of student-to-student renting. Join us in creating a safer,
+        more sustainable, and convenient student lifestyle at IIUM!
+    </div>
+    <br />
+</div>
+
+
+<div class="text-center bg-light mb-5 py-4">
+    <div class="container">
+        <p class="text-center mb-3 fw-bolder fs-2">Guidance</p>
+        <div class="row">
+            <div class="col-4">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">Electronics </a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">Books </a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">How to become a Member ?</a>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                        <div class="alert alert-warning" role="alert">
+                            Renting electronics offers a multitude of benefits for both individuals and the environment.
+                            These are just a few examples of the many amazing electronics available on IRent. Start browsing
+                            today and find what you're looking for!
+                            <br />
+                            <strong>(Save Money, Reduce Waste, Promote Sustainability, Access Innovation)</strong>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                        <div class="alert alert-primary" role="alert">
+
+                            Renting books provides numerous advantages for both you and the planet. Explore IRent's
+                            vast selection of amazing books and discover your next literary adventure!
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                        <div class="alert alert-success" role="alert">
+                            Joining the community of IRent is quick and easy! Here's how you can become a member
+                            <strong>Click on "Sign Up"</strong>
+                            and create your member account from
+                            <a class="text-primary" asp-area="" asp-controller="Account" asp-action="Register">Here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

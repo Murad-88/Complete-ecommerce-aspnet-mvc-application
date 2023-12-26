@@ -2,7 +2,145 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<section>
+    <!-- Background image -->
+    <div class="bg-image">
+        <img src="~/images/Homepage background.jpg" height="500px" width="100%" />
+    </div>
+    <!-- Background image -->
+</section>
+@*<section>
+    <img src="~/Images/Homepage background1.jpg" class="img-fluid"  alt="...">
+</section>*@
+
+<div class="container-fluid bg-light py-3 px-3">
+    <div class="text-center">
+        <h1 class="display-4"><strong>Welcome To</strong></h1>
+        <h1 class="display-4"><strong>Student-To-Student</strong></h1>
+        <h1 class="display-4"><strong>Renting </strong><b class="text-primary"> Platform</b></h1>
+
+        <p class="my-4">
+            We're thrilled to have you join as an agent to rent out items and make money. Let's get started
+            by creating your account and setting up your personalized agent page..</a>.
+        </p>
+    </div>
+    <!-- Start home seaction -->
+    <section class="my-5" id="home">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <div class="d-flex flex-column" style="width: 45%;">
+                    <h1 class="text-primary text-center">Today's Vouchers</h1>
+                    <p class="lead text-sm-center">
+                        Redeem your voucher for Today and enjoy Renting item
+                    </p>
+                    <div class="mx-auto d-flex">
+                        <button id="redeemBtn" class="btn btn-primary text-light">Redeem</button>
+                        <span id="arrowIcon" class="arrow-icon"><i class="bi bi-check-circle-fill text-success fs-2 align-self-center"></i></span>
+                    </div>
+                </div>
+                <img src="~/Images/atract.jpg" class="w-50 rounded-circle d-none d-sm-block" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- End home seaction -->
 </div>
+
+<div class="container-fluid py-5 text-center ">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light"> iRent</h1>
+            <p class="lead text-muted">Despite the growing popularity of 
+                student-to-student renting through social media platforms, 
+                there remains a need to address concerns related to trust, safety, 
+                and effective communication to ensure a secure and seamless renting experience.</p>
+            <p>
+                <a asp-controller="Account" asp-action="Register" class="btn btn-primary my-2">
+                    <i class="bi bi-person-plus"></i> Register
+                </a>
+                <a asp-controller="Account" asp-action="Login" class="btn btn-success my-2">
+                    <i class="bi bi-box-arrow-in-right"></i> Login
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<section class="mb-5">
+    <div class="container text-center my-3">
+        <h2 class="font-weight-light my-2">Latest Offers</h2>
+        <div class="row mx-auto my-auto justify-content-center">
+            <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="~/Images/p1.jpg" class="img-fluid" height="100%" />
+                                </div>
+                                <div class="card-img-overlay">Slide 1</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="~/Images/p2.jpg" class="img-fluid object-fit-cover rounded" height="100%" />
+                                </div>
+                                <div class="card-img-overlay">Slide 2</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="~/Images/p3.jpg" class="img-fluid object-fit-cover rounded" />
+                                </div>
+                                <div class="card-img-overlay">Slide 3</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="~/Images/p4.jpg" class="img-fluid object-fit-cover rounded" />
+                                </div>
+                                <div class="card-img-overlay">Slide 4</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="~/Images/p1.jpg" class="img-fluid">
+                                </div>
+                                <div class="card-img-overlay">Slide 5</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="~/Images/p2.jpg" class="img-fluid">
+                                </div>
+                                <div class="card-img-overlay">Slide 6</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+            </div>
+        </div>
+        <h5 class="mt-2 fw-light">advances one slide at a time</h5>
+    </div>
+</section>
