@@ -146,7 +146,7 @@ namespace eTickets.Data
                             EndDate = DateTime.Now.AddDays(10),
                             CinemaId = 3,
                             ProducerId = 3,
-                            MovieCategory = MovieCategory.Documentary
+                            MovieCategory = MovieCategory.Device
                         },
                         new Movie()
                         {
@@ -158,7 +158,7 @@ namespace eTickets.Data
                             EndDate = DateTime.Now.AddDays(3),
                             CinemaId = 1,
                             ProducerId = 1,
-                            MovieCategory = MovieCategory.Action
+                            MovieCategory = MovieCategory.Device
                         },
                         new Movie()
                         {
@@ -170,7 +170,7 @@ namespace eTickets.Data
                             EndDate = DateTime.Now.AddDays(7),
                             CinemaId = 4,
                             ProducerId = 4,
-                            MovieCategory = MovieCategory.Horror
+                            MovieCategory = MovieCategory.Device
                         },
                         new Movie()
                         {
@@ -182,7 +182,7 @@ namespace eTickets.Data
                             EndDate = DateTime.Now.AddDays(-5),
                             CinemaId = 1,
                             ProducerId = 2,
-                            MovieCategory = MovieCategory.Documentary
+                            MovieCategory = MovieCategory.Device
                         },
                         new Movie()
                         {
@@ -194,7 +194,7 @@ namespace eTickets.Data
                             EndDate = DateTime.Now.AddDays(-2),
                             CinemaId = 1,
                             ProducerId = 3,
-                            MovieCategory = MovieCategory.Cartoon
+                            MovieCategory = MovieCategory.Device
                         },
                         new Movie()
                         {
@@ -206,7 +206,7 @@ namespace eTickets.Data
                             EndDate = DateTime.Now.AddDays(20),
                             CinemaId = 1,
                             ProducerId = 5,
-                            MovieCategory = MovieCategory.Drama
+                            MovieCategory = MovieCategory.Device
                         }
                     });
                     context.SaveChanges();

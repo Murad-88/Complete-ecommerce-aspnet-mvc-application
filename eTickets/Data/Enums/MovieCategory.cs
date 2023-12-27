@@ -2,11 +2,11 @@
 {
     public enum MovieCategory
     {
-        Action = 1,
-        Comedy,
-        Drama,
-        Documentary,
-        Cartoon,
-        Horror
+        Book = 1,
+        Device,
+        Bag,
+        Electronic,
+        Outfits,
+        Othors
     }
 }

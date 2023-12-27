@@ -6,7 +6,8 @@
 
 @*Write Code*@
 <div class="bg-light py-3 mb-3">
-    <h1 class="text-center">Items list</h1>
+    <h1 class="text-center">iRent items</h1>
+    <p class="text-center mx-auto">where you can find all the items</p>
 </div>
 
 <div class="row">
@@ -34,7 +35,7 @@
                     <div class="col-md-6">
                         <div class="card-body">
                             <p class="card-text">@item.Description</p>
-                            <p class="card-text"><b>Cinema: </b>@item.Cinema.Name</p>
+                            <p class="card-text"><b>Mahallah: </b>@item.Cinema.Name</p>
                             <p class="card-text"><b>Category: </b>@item.MovieCategory</p>
                             <p class="card-text"><b>Start Date: </b>@item.StartDate.ToString("dd MMM yyyy")</p>
                             <p class="card-text"><b>End Date: </b>@item.EndDate.ToString("dd MMM yyyy")</p>
@@ -66,7 +67,7 @@
                                    asp-controller="Orders"
                                    asp-action="AddItemToShoppingCart"
                                    asp-route-id="@item.Id">
-                                    <i class="bi bi-cart-plus"></i> Add to Cart (Price @item.Price.ToString("c"))
+                                    <i class="bi bi-cart-plus"></i> Add to Cart (RM @item.Price)
                                 </a>
                             </p>
                         </div>
