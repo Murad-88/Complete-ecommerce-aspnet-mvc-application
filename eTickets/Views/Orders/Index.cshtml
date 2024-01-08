@@ -55,7 +55,7 @@
 </div> *@
 
 
-@model List<Order>
+@* @model List<Order>
 
 @{
     ViewData["Title"] = "All Orders";
@@ -104,4 +104,74 @@
             }
         </tbody>
     </table>
+</div> *@
+
+
+@model List<Order>
+
+@{
+    ViewData["Title"] = "All Orders";
+}
+
+<div class="container">
+    <h1 class="text-center mt-4 mb-4">List of All Orders</h1>
+
+    <table class="table table-bordered table-hover" id="ordersTable">
+        <thead class="bg-info text-white">
+            <tr>
+                <th scope="col">Order ID</th>
+                <th scope="col">Items <span class="float-end">Unit Price</span></th>
+                <th scope="col">Total</th>
+                <th scope="col">Payment Date</th>
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <th scope="col">User</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+                <tr>
+                    <td class="align-middle">@order.Id</td>
+                    <td class="align-middle">
+                        <ul class="list-unstyled">
+                            @foreach (var item in order.OrderItems)
+                            {
+                                <li class="d-flex justify-content-between py-2">
+                                    <div>
+                                        <span class="badge bg-success me-2">@item.Amount</span>
+                                        @item.Movie.Name
+                                    </div>
+                                    <span class="text-muted">@item.Price.ToString("c")</span>
+                                </li>
+                            }
+                        </ul>
+                    </td>
+                    <td class="align-middle">@order.OrderItems.Select(m => m.Movie.Price * m.Amount).Sum().ToString("c")</td>
+                    <td class="align-middle" id="paymentDateColumn"></td>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <td class="align-middle">@order.User.FullName</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
+
+<script>
+    // Add Payment Date column dynamically using JavaScript
+    document.addEventListener('DOMContentLoaded', function () {
+        var table = document.getElementById('ordersTable');
+        var tbody = table.getElementsByTagName('tbody')[0];
+        var rows = tbody.getElementsByTagName('tr');
+
+        for (var i = 0; i < rows.length; i++) {
+            var cell = rows[i].insertCell(3); // Insert cell at index 3 (Payment Date column)
+            var currentDate = new Date().toLocaleDateString();
+            cell.innerHTML = currentDate;
+            cell.classList.add('align-middle');
+        }
+    });
+</script>
