@@ -47,7 +47,7 @@
                                 }
                                 else if (DateTime.Now > item.EndDate)
                                 {
-                                    <span class="badge bg-danger text-white">EXPIRED</span>
+                                    <span class="badge bg-danger text-white">NOT AVAILABLE</span>
                                 }
                                 else
                                 {
@@ -77,5 +77,16 @@
         </div>
     }
 </div>
+
+@if (User.Identity.IsAuthenticated && User.IsInRole("User"))
+{
+    <div class="text-light fixed-bottom m-sm-2 m-md-5">
+        <a href="https://forms.gle/1P4yBXe21kmcPGo6A" class="coolBeans btn btn-success  float-start">
+            <i class=" bi bi-plus-circle"> Add New Item</i>
+        </a>
+    </div>
+
+}
+
 
 @await Html.PartialAsync("_CreateItem", "Movies")
