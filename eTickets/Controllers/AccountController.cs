@@ -33,13 +33,18 @@ namespace eTickets.Controllers
         public IActionResult Login() => View(new LoginVM());
 
         [HttpPost]
+        [HttpPost]
         public async Task<IActionResult> Login(LoginVM loginVM)
         {
             if (!ModelState.IsValid) return View(loginVM);
 
-            var user = await _userManager.FindByEmailAsync(loginVM.EmailAddress);
+            // Check if input is an email or username
+            var user = await _userManager.FindByEmailAsync(loginVM.EmailAddress) ??
+                       await _userManager.FindByNameAsync(loginVM.EmailAddress); // Reusing EmailAddress field for both
+
             if (user != null)
             {
+                // Check if the password is correct
                 var passwordCheck = await _userManager.CheckPasswordAsync(user, loginVM.Password);
                 if (passwordCheck)
                 {
@@ -49,6 +54,7 @@ namespace eTickets.Controllers
                         return RedirectToAction("Index", "Movies");
                     }
                 }
+
                 TempData["Error"] = "Wrong credentials. Please, try again!";
                 return View(loginVM);
             }
@@ -56,6 +62,7 @@ namespace eTickets.Controllers
             TempData["Error"] = "Wrong credentials. Please, try again!";
             return View(loginVM);
         }
+
 
         public IActionResult Register() => View(new RegisterVM());
 
